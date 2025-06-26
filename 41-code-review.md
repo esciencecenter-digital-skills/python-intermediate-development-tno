@@ -233,7 +233,7 @@ on your repository (acting as a code author).
 
 1. Head over to your software repository in GitLab.
 2. Navigate to the merge requests tab.
-3. Create a new merge request by clicking the green `New merge request` button.
+3. Create a new merge request by clicking the blue `New merge request` button.
   ![](fig/gitlab-merge-request-tab.png){alt='GitLab merge requests tab' .image-with-shadow width="900px"}
 4. Select the base and the compare branch: `develop` and `feature-std-dev`, respectively.
   Recall that the base branch is where you want your changes to be merged
@@ -557,7 +557,11 @@ This tells the author you are happy for them to merge the merge request.
   merge the changes onto the base branch.
   Typically, it is the code author's responsibility to merge
   but this may differ from team to team.
+<<<<<<< HEAD
   In our case, you will merge the changes on the MR on your repository.
+=======
+  In our case, you will merge the changes on the PR on your repository.
+>>>>>>> d93e64c3 (Change github to gitlab in section 4)
 
 2. Delete the merged branch to reduce the clutter in the repository.
 
