@@ -118,11 +118,11 @@
   Intermediate Research Software Development
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 61%" class="percentage">
-    61%
+<aside class="col-md-12 lesson-progress"><div style="width: 72%" class="percentage">
+    72%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 61%" aria-valuenow="61" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 72%" aria-valuenow="72" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -251,7 +251,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitHub</a>
+        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitLab</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -446,42 +446,6 @@
 <div class="accordion accordion-flush" id="accordionFlush27">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading27">
-        <a href="50-section5-intro.html">Section 5: Managing and Improving Software Over Its Lifetime</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush28">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading28">
-        <a href="51-managing-software.html">5.1 Managing a Collaborative Software Project</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush29">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading29">
-        <a href="52-assessing-software-suitability-improvement.html">5.2 Assessing Software for Suitability and Improvement</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush30">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading30">
-        <a href="53-improvement-through-feedback.html">5.3 Software Improvement Through Feedback</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush31">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading31">
         <a href="60-wrap-up.html">Wrap-up</a>
     </div><!--/div.accordion-header-->
 
@@ -546,7 +510,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>3.4 Code Refactoring</h1>
-        <p>Last updated on 2025-06-19 |
+        <p>Last updated on 2025-06-26 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/episodes/34-code-refactoring.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -654,9 +618,10 @@ at all.</p>
 <h3 class="callout-title">Exercise: Write Regression Tests</h3>
 <div class="callout-content">
 <p>Modify the <code>analyse_data()</code> function not to plot a graph
-and return the data instead. Then, add a new test file called
+and return the data instead. Then, adapt the test
+<code>test_analyse_data_mock_source</code> in the
 <code>test_compute_data.py</code> in the <code>tests</code> folder and
-add a regression test to verify the current output of
+turn it into a regression test to verify the current output of
 <code>analyse_data()</code>. We will use this test in the remainder of
 this section to verify the output <code>analyse_data()</code> is
 unchanged each time we refactor or change code in the future.</p>
@@ -664,13 +629,16 @@ unchanged each time we refactor or change code in the future.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="im">from</span> inflammation.compute_data <span class="im">import</span> analyse_data</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="im">from</span> unittest.mock <span class="im">import</span> Mock</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">def</span> test_analyse_data():</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    path <span class="op">=</span> os.path.join( os.getcwd(), <span class="st">"../data"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    data_source <span class="op">=</span> CSVDataSource(path)</span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    result <span class="op">=</span> analyse_data(data_source)</span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: add assert statement(s) to test the result value is as expected</span></span></code></pre>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="im">from</span> inflammation.compute_data <span class="im">import</span> analyse_data</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    data_source <span class="op">=</span> Mock()</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    datasource.load_inflammation_data.return_value <span class="op">=</span> [[[<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>]],</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>                                                      [[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>]]]</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>    result <span class="op">=</span> analyse_data(data_source)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: add assert statement(s) to test the result value is as expected</span></span></code></pre>
 </div>
 <p>Use <code>assert_array_almost_equal</code> from the
 <code>numpy.testing</code> library to compare arrays of floating point
@@ -712,20 +680,15 @@ same as the expected value</li>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="im">import</span> numpy.testing <span class="im">as</span> npt</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="im">from</span> inflammation.compute_data <span class="im">import</span> analyse_data</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="im">from</span> unittest.mock <span class="im">import</span> Mock</span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="kw">def</span> test_analyse_data():</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    path <span class="op">=</span> os.path.join( os.getcwd(), <span class="st">"../data"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    data_source <span class="op">=</span> CSVDataSource(path)</span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>    result <span class="op">=</span> analyse_data(data_source)</span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>    expected_output <span class="op">=</span> [<span class="fl">0.</span>,<span class="fl">0.22510286</span>,<span class="fl">0.18157299</span>,<span class="fl">0.1264423</span>,<span class="fl">0.9495481</span>,<span class="fl">0.27118211</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>                       <span class="fl">0.25104719</span>,<span class="fl">0.22330897</span>,<span class="fl">0.89680503</span>,<span class="fl">0.21573875</span>,<span class="fl">1.24235548</span>,<span class="fl">0.63042094</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>                       <span class="fl">1.57511696</span>,<span class="fl">2.18850242</span>,<span class="fl">0.3729574</span>,<span class="fl">0.69395538</span>,<span class="fl">2.52365162</span>,<span class="fl">0.3179312</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>                       <span class="fl">1.22850657</span>,<span class="fl">1.63149639</span>,<span class="fl">2.45861227</span>,<span class="fl">1.55556052</span>,<span class="fl">2.8214853</span>,<span class="fl">0.92117578</span>,</span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>                       <span class="fl">0.76176979</span>,<span class="fl">2.18346188</span>,<span class="fl">0.55368435</span>,<span class="fl">1.78441632</span>,<span class="fl">0.26549221</span>,<span class="fl">1.43938417</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>                       <span class="fl">0.78959769</span>,<span class="fl">0.64913879</span>,<span class="fl">1.16078544</span>,<span class="fl">0.42417995</span>,<span class="fl">0.36019114</span>,<span class="fl">0.80801707</span>,</span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>                       <span class="fl">0.50323031</span>,<span class="fl">0.47574665</span>,<span class="fl">0.45197398</span>,<span class="fl">0.22070227</span>]</span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    npt.assert_array_almost_equal(result, expected_output)</span></code></pre>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    data_source <span class="op">=</span> Mock()</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    data_source.load_inflammation_data.return_value <span class="op">=</span> [[[<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>]],</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>                                                       [[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>]]]</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>    result <span class="op">=</span> analyse_data(data_source)</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>    expected_output <span class="op">=</span> [<span class="fl">0.</span>, <span class="fl">0.5</span>, <span class="fl">0.</span>]</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>    npt.assert_array_almost_equal(result, expected_output)</span></code></pre>
 </div>
 <p>Note that while the above test will detect if we accidentally break
 the analysis code and change the output of the analysis, it is still not
@@ -1062,8 +1025,8 @@ possible makes the code easier to understand, test and maintain.</li>
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/34-code-refactoring.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/34-code-refactoring.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-06-19",
-  "datePublished": "2025-06-25"
+  "dateModified": "2025-06-26",
+  "datePublished": "2025-06-26"
 }
 
   </script><script>

@@ -263,7 +263,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitHub</a>
+        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitLab</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -443,42 +443,6 @@
 <div class="accordion accordion-flush" id="accordionFlush27">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading27">
-        <a href="50-section5-intro.html">Section 5: Managing and Improving Software Over Its Lifetime</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush28">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading28">
-        <a href="51-managing-software.html">5.1 Managing a Collaborative Software Project</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush29">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading29">
-        <a href="52-assessing-software-suitability-improvement.html">5.2 Assessing Software for Suitability and Improvement</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush30">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading30">
-        <a href="53-improvement-through-feedback.html">5.3 Software Improvement Through Feedback</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush31">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading31">
         <a href="60-wrap-up.html">Wrap-up</a>
     </div><!--/div.accordion-header-->
 
@@ -543,7 +507,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Setting the Scene</h1>
-        <p>Last updated on 2025-06-19 |
+        <p>Last updated on 2025-06-26 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/episodes/00-setting-the-scene.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -613,7 +577,7 @@ software that is easier to develop and sustain in the future by yourself
 and others. Skills and tools taught here, while Python-specific, are
 transferable to other similar tools and programming languages.</p>
 <p>The course is organised into the following sections:</p>
-<figure><img src="../fig/course-overview.svg" alt="Course overview diagram. Arrows connect the following boxed text in order: 1) Setting up software environment 2) Verifying software correctness 3) Software development as a process 4) Collaborative development for reuse 5) Managing software over its lifetime." class="figure mx-auto d-block"><div class="figcaption">Course overview diagram</div>
+<figure><img src="../fig/course-overview.svg" alt="Course overview diagram. Arrows connect the following boxed text in order: 1) Setting up software environment 2) Verifying software correctness 3) Software development as a process 4) Collaborative development for reuse" class="figure mx-auto d-block"><div class="figcaption">Course overview diagram</div>
 </figure><!---
 Source of the above image can be rendered in the Mermaid live editor:
 <https://mermaid.live/edit#pako:eNpdkE1rwzAMhv-K8CmFNrCvSw6D9eO2XlbYYeSiJXJqcKwgKyml9L_PaZox5pOQn8ey3oupuCZTGOv5VB1RFN4_ygDpvGUPORxI1YUG-m5qRrZ6QiGgMDjh0FLQBZRhtXqFdfaYwyeJs-ek_OMrFqFKA8U485vsKQ2YgZoG8tyND8LkYgSETrganUnZZs85bNh7_GZBdQPd2b-2ZQGhPtJd2mUvOewxYDNu8vujSeSBBJxG8M6SupYWZmlakhZdnWK5jFRp9EgtlaZIZU0We6-lKcM1odgrH86hMoVKT0vTdzUqbR02gq0pLPqYulQ7ZdlPUd8Sn8nd7Wa2OwxfzLN3_QE4H4oo>
@@ -622,10 +586,14 @@ The mermaid source is (with one less dash in arrows than needed):
 
 ```mermaid
 flowchart LR
-  A(1. Setting up software environment) -> B(2. Verifying software correctness)
-  B -> C(3. Software development as a process)
-  C -> D(4. Collaborative development for reuse)
-  D -> E(5. Managing software over its lifetime)
+A[1. Setting up
+software environment]
+-> B[2. Verifying
+software correctness]
+-> C[3. Software development
+as a process]
+-> D[4. Collaborative
+development for reuse]
 ```
 --><div class="section level3">
 <h3 id="section-1-setting-up-software-environment"><a href="10-section1-intro.html">Section 1: Setting up Software
@@ -645,7 +613,7 @@ development, testing and debugging</strong>, <strong>Version
 control</strong> and using code branches to develop new features in
 parallel,</li>
 <li>
-<strong>GitHub</strong> (central and remote source code management
+<strong>GitLab</strong> (central and remote source code management
 platform supporting version control with Git) for <strong>code backup,
 sharing and collaborative development</strong>, and</li>
 <li>
@@ -661,8 +629,8 @@ techniques and conventions, in this section we learn:</p>
 <ul><li>how to set up a <strong>test framework</strong> and write tests to
 verify the behaviour of our code is correct, and</li>
 <li>how to automate and scale testing with <strong>Continuous
-Integration (CI)</strong> using <strong>GitHub Actions</strong> (a CI
-service available on GitHub).</li>
+Integration (CI)</strong> using <strong><a href="https://about.gitlab.com/topics/ci-cd/" class="external-link">GitLab CI/CD</a></strong>
+(a CI service available on GitLab).</li>
 </ul></div>
 <div class="section level3">
 <h3 id="section-3-software-development-as-a-process"><a href="30-section3-intro.html">Section 3: Software Development as
@@ -695,21 +663,6 @@ reuse, by adopting best practices in <strong>documenting</strong>,
 <strong>licencing</strong>, <strong>tracking issues</strong>,
 <strong>supporting</strong> your software, and <strong>packaging
 software</strong> for release to others.</li>
-</ul></div>
-<div class="section level3">
-<h3 id="section-5-managing-and-improving-software-over-its-lifetime"><a href="50-section5-intro.html">Section 5: Managing and Improving
-Software Over Its Lifetime</a><a class="anchor" aria-label="anchor" href="#section-5-managing-and-improving-software-over-its-lifetime"></a></h3>
-<p>Finally, we move beyond just software development to managing a
-collaborative software project and will look into:</p>
-<ul><li>internal <strong>planning and prioritising tasks</strong> for future
-development using agile techniques and effort estimation, management of
-<strong>internal and external communication</strong>, and
-<strong>software improvement</strong> through feedback.</li>
-<li>how to adopt a critical mindset not just towards our own software
-project but also to <strong>assess other people’s software to ensure it
-is suitable</strong> for us to reuse, identify areas for improvement,
-and how to use GitHub to register good quality issues with a particular
-code repository.</li>
 </ul></div>
 </section><section><h2 class="section-heading" id="before-we-start">Before We Start<a class="anchor" aria-label="anchor" href="#before-we-start"></a></h2>
 <hr class="half-width"><p>A few notes before we start.</p>
@@ -770,7 +723,7 @@ possible, try and work out a solution on your own.</p>
 <h3 class="callout-title">Outdated Screenshots</h3>
 <div class="callout-content">
 <p>Throughout this lesson we will make use and show content from
-Graphical User Interface (GUI) tools (PyCharm and GitHub). These are
+Graphical User Interface (GUI) tools (PyCharm and GitLab). These are
 evolving tools and platforms, always adding new features and new visual
 elements. Screenshots in the lesson may then become out-of-sync, refer
 to or show content that no longer exists or is different to what you see
@@ -861,8 +814,8 @@ while to write code to help with your work.</li>
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/00-setting-the-scene.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/00-setting-the-scene.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-06-19",
-  "datePublished": "2025-06-25"
+  "dateModified": "2025-06-26",
+  "datePublished": "2025-06-26"
 }
 
   </script><script>

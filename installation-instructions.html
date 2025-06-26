@@ -251,7 +251,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitHub</a>
+        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitLab</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -431,42 +431,6 @@
 <div class="accordion accordion-flush" id="accordionFlush27">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading27">
-        <a href="50-section5-intro.html">Section 5: Managing and Improving Software Over Its Lifetime</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush28">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading28">
-        <a href="51-managing-software.html">5.1 Managing a Collaborative Software Project</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush29">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading29">
-        <a href="52-assessing-software-suitability-improvement.html">5.2 Assessing Software for Suitability and Improvement</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush30">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading30">
-        <a href="53-improvement-through-feedback.html">5.3 Software Improvement Through Feedback</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush31">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading31">
         <a href="60-wrap-up.html">Wrap-up</a>
     </div><!--/div.accordion-header-->
 
@@ -531,7 +495,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Installation Instructions</h1>
-        <p>Last updated on 2025-06-19 |
+        <p>Last updated on 2025-06-26 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/learners/installation-instructions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -550,7 +514,7 @@ follow the course:</p>
 Zsh or Git Bash)</li>
 <li><a href="#git-version-control-tool">Git version control
 program</a></li>
-<li><a href="#github-account">GitHub account</a></li>
+<li><a href="#gitlab-account">GitLab account</a></li>
 <li><a href="#python-3-distribution">Python 3 distribution</a></li>
 <li>
 <a href="#pycharm-ide">PyCharm</a> integrated development
@@ -673,7 +637,7 @@ See 'git help git' for an overview of the system.</code></pre>
 <p>When you use Git on a machine for the first time, you need to
 configure a few things:</p>
 <ul><li>your name,</li>
-<li>your email address (the one you used to open your GitHub account
+<li>your email address (the one you used to open your GitLab account
 with, which will be used to uniquely identify your commits),</li>
 <li>preferred text editor for Git to use (e.g. <code>nano</code> or
 another text editor of your choice),</li>
@@ -688,40 +652,31 @@ project on your machine).</li>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.editor <span class="st">"nano -w"</span></span></code></pre>
 </div>
 <div class="section level3">
-<h3 id="github-account">GitHub Account<a class="anchor" aria-label="anchor" href="#github-account"></a></h3>
-<p>GitHub is a free, online host for Git repositories that you will use
-during the course to store your code in so you will need to open a free
-<a href="https://github.com/" class="external-link">GitHub</a> account unless you do not
-already have one.</p>
+<h3 id="gitlab-account">GitLab Account<a class="anchor" aria-label="anchor" href="#gitlab-account"></a></h3>
+<p>GitLab is an online host for Git repositories that you will use
+during the course to store your code in. You will need a GitLab account
+with which you have access to TNOs GitLab instance. Please contact us if
+you do not have such an account.</p>
 </div>
 <div class="section level3">
-<h3 id="secure-access-to-github-using-git-from-command-line">Secure Access To GitHub Using Git From Command Line<a class="anchor" aria-label="anchor" href="#secure-access-to-github-using-git-from-command-line"></a></h3>
-<p>In order to access GitHub using Git from your machine securely, you
-need to set up a way of authenticating yourself with GitHub through Git.
+<h3 id="secure-access-to-gitlab-using-git-from-command-line">Secure Access To GitLab Using Git From Command Line<a class="anchor" aria-label="anchor" href="#secure-access-to-gitlab-using-git-from-command-line"></a></h3>
+<p>In order to access GitLab using Git from your machine securely, you
+need to set up a way of authenticating yourself with GitLab through Git.
 The recommended way to do that for this course is to set up <a href="https://www.ssh.com/academy/ssh/public-key-authentication" class="external-link"><em>SSH
 authentication</em></a> - a method of authentication that is more secure
 than sending <a href="https://security.stackexchange.com/questions/110415/is-it-ok-to-send-plain-text-password-over-https" class="external-link"><em>passwords
 over HTTPS</em></a> and which requires a pair of keys - one public that
-you upload to your GitHub account, and one private that remains on your
+you upload to your GitLab account, and one private that remains on your
 machine.</p>
-<p>GitHub provides full documentation and guides on how to:</p>
-<ul><li>
-<a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" class="external-link">generate
-an SSH key</a>, and</li>
-<li>
-<a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" class="external-link">add
-an SSH key to a GitHub account</a>.</li>
-</ul><p>A short summary of the commands you need to perform is shown
-below.</p>
 <p>To generate an SSH key pair, you will need to run the
 <code>ssh-keygen</code> command from your command line tool/GitBash and
 provide <strong>your identity for the key pair</strong> (e.g. the email
-address you used to register with GitHub) via the <code>-C</code>
+address you used to register with GitLab) via the <code>-C</code>
 parameter as shown below. Note that the <code>ssh-keygen</code> command
 can be run with different parameters - e.g. to select a specific public
 key algorithm and key length; if you do not use them
 <code>ssh-keygen</code> will generate an <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)#:~:text=RSA%20involves%20a%20public%20key,by%20using%20the%20private%20key." class="external-link">RSA</a>
-key pair for you by default. GitHub now recommends that you use a newer
+key pair for you by default. GitLab now recommends that you use a newer
 cryptographic standard (such as <a href="https://en.wikipedia.org/wiki/EdDSA" class="external-link">EdDSA</a> variant algorithm
 <a href="https://cryptobook.nakov.com/digital-signatures/eddsa-and-ed25519" class="external-link">Ed25519</a>),
 so please be sure to specify it using the <code>-t</code> flag as shown
@@ -734,7 +689,7 @@ to empty.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> ssh-keygen <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"your-github-email@example.com"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> ssh-keygen <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"your-gitlab-email@example.com"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -746,7 +701,7 @@ Enter same passphrase again:
 Your identification has been saved in /Users/&lt;YOUR_USERNAME&gt;/.ssh/id_ed25519
 Your public key has been saved in /Users/&lt;YOUR_USERNAME&gt;/.ssh/id_ed25519.pub
 The key fingerprint is:
-SHA256:qjhN/iO42nnYmlpink2UTzaJpP8084yx6L2iQkVKdHk your-github-email@example.com
+SHA256:qjhN/iO42nnYmlpink2UTzaJpP8084yx6L2iQkVKdHk your-gitlab-email@example.com
 The key's randomart image is:
 +--[ED25519 256]--+
 |.. ..            |
@@ -761,7 +716,7 @@ The key's randomart image is:
 +----[SHA256]-----+</code></pre>
 </div>
 <p>Next, you need to copy your public key (<strong>not your private key
-- this is important!</strong>) over to your GitHub account. The
+- this is important!</strong>) over to your GitLab account. The
 <code>ssh-keygen</code> command above will let you know where your
 public key is saved (the file should have the extension “.pub”), and you
 can get its contents (e.g. on a Mac OS system) as follows:</p>
@@ -773,83 +728,63 @@ can get its contents (e.g. on a Mac OS system) as follows:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>ssh-ed25519 AABAC3NzaC1lZDI1NTE5AAAAICWGVRsl/pZsxx85QHLwSgJWyfMB1L8RCkEvYNkP4mZC your-github-email@example.com</code></pre>
+<pre class="output" tabindex="0"><code>ssh-ed25519 AABAC3NzaC1lZDI1NTE5AAAAICWGVRsl/pZsxx85QHLwSgJWyfMB1L8RCkEvYNkP4mZC your-gitlab-email@example.com</code></pre>
 </div>
 <p>Copy the line of output that starts with “ssh-ed25519” and ends with
 your email address (it may start with a different algorithm name based
 on which one you used to generate the key pair and it may have gone over
 multiple lines if your command line window is not wide enough).</p>
-<p>Finally, go to your <a href="https://github.com/settings/ssh/new" class="external-link">GitHub Settings -&gt; SSH and
-GPG keys -&gt; Add New</a> page to add a new SSH public key. Give your
-key a memorable name (e.g. the name of the computer you are working on
-that contains the private key counterpart), paste the public key from
-your clipboard into the box labelled “Key” (making sure it does not
-contain any line breaks), then click the “Add SSH key” button.</p>
-<p>Now, we can check that the SSH connection is working:</p>
+<p>Finally, go to your <a href="https://ci.tno.nl/gitlab/-/user_settings/ssh_keys" class="external-link">GitLab Settings
+-&gt; SSH and GPG keys -&gt; Add New</a> page to add a new SSH public
+key. Give your key a memorable name (e.g. the name of the computer you
+are working on that contains the private key counterpart), paste the
+public key from your clipboard into the box labelled “Key” (making sure
+it does not contain any line breaks), then click the “Add SSH key”
+button.</p>
+<p>To check that everything works, run:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> ssh <span class="at">-T</span> git@github.com</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> ssh <span class="at">-T</span> git@ci.tno.nl</span></code></pre>
 </div>
-<div id="what-about-passwords" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="what-about-passwords" class="callout-inner">
-<h3 class="callout-title">What About Passwords?</h3>
-<div class="callout-content">
-<p>While using passwords over HTTPS for authentication is easier to
-setup and will allow you <em>read access</em> to your repository on
-GitHub from your machine, it alone is not sufficient any more to allow
-you to send changes or <em>write</em> to your remote repository on
-GitHub. This is because, on 13 August 2021, GitHub has <a href="https://github.blog/changelog/2021-08-12-git-password-authentication-is-shutting-down/" class="external-link">strengthened
-security requirements for all authenticated Git operations</a>. This
-means you would need to use a personal access token instead of your
-password for added security each time you need to authenticate yourself
-to GitHub from the command line (e.g. when you want to push your local
-changes to your code repository on GitHub). While using SSH key pair for
-authentication may seem complex, once set up, it is actually more
-convenient than keeping track of/caching your access token.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="python-3-distribution">Python 3 Distribution<a class="anchor" aria-label="anchor" href="#python-3-distribution"></a></h2>
-<hr class="half-width"><p>To download the latest Python 3 distribution for your operating
-system, please head to <a href="https://www.python.org/downloads/" class="external-link">Python.org</a>.</p>
-<p>If you are on Linux, it is likely that the system Python 3 already
-installed will satisfy the requirements of this course (the material has
-been tested using the standard Python distribution version 3.11 but any
-<a href="https://devguide.python.org/versions/#versions" class="external-link">supported
-version</a> should work).</p>
-<p>The course uses <code>venv</code> for virtual environment management
-and <code>pip</code> for package management. The material has not been
-extensively tested with other Python distributions and package managers,
-but most sections are expected to work with some modifications. For
-example, package installation and virtual environments would need to be
-managed differently, but Python script invocations should remain the
-same regardless of the Python distribution used.</p>
-<div id="recommended-python-version" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="recommended-python-version" class="callout-inner">
-<h3 class="callout-title">Recommended Python Version</h3>
-<div class="callout-content">
-<p>We recommend using the latest Python version but any <a href="https://devguide.python.org/versions/#versions" class="external-link">supported
-version</a> should work. Specifically, we recommend upgrading from
-Python 2.7 wherever possible; continuing to use it will likely result in
-difficulty finding supported dependencies or syntax errors.</p>
-</div>
-</div>
-</div>
-<p>You can test your Python installation from the command line with:</p>
-<div class="codewrapper sourceCode" id="cb11">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> python3 <span class="at">--version</span> <span class="co"># on Mac/Linux</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ex">$</span> python <span class="at">--version</span> <span class="co"># on Windows — Windows installation comes with a python.exe file rather than a python3.exe file </span></span></code></pre>
-</div>
+<p>returning (something similar to):</p>
+<pre><code>Welcome to GitLab @[username]!
+
+## Python 3 Distribution
+
+To download the latest Python 3 distribution for your operating system,
+please head to [Python.org](https://www.python.org/downloads/).
+
+If you are on Linux,
+it is likely that the system Python 3 already installed will satisfy the requirements
+of this course (the material has been tested using the standard Python distribution version 3.11
+but any [supported version](https://devguide.python.org/versions/#versions) should work).
+
+The course uses `venv` for virtual environment management and `pip` for package management.
+The material has not been extensively tested with other Python distributions and package managers,
+but most sections are expected to work with some modifications.
+For example, package installation and virtual environments would need to be managed differently, but Python script
+invocations should remain the same regardless of the Python distribution used.
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Recommended Python Version
+
+We recommend using the latest Python version but any [supported version](https://devguide.python.org/versions/#versions)
+should work.
+Specifically, we recommend upgrading from Python 2.7 wherever possible;
+continuing to use it will likely result in difficulty finding supported dependencies or
+syntax errors.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+You can
+test your Python installation from the command line with:
+
+```bash
+$ python3 --version # on Mac/Linux
+$ python --version # on Windows — Windows installation comes with a python.exe file rather than a python3.exe file</code></pre>
 <p>If you are using Windows and invoking <code>python</code> command
 causes your Git Bash terminal to hang with no error message or output,
 you may need to create an alias for the python executable
@@ -876,11 +811,12 @@ something like:</p>
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">Python</span> 3.11.4 <span class="er">(</span><span class="ex">main,</span> Jun 20 2023, 17:23:00<span class="kw">)</span> <span class="ex">[Clang</span> 14.0.3 <span class="er">(</span><span class="ex">clang-1403.0.22.14.1</span><span class="kw">)</span><span class="ex">]</span> on darwin</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="ex">Type</span> <span class="st">"help"</span>, <span class="st">"copyright"</span>, <span class="st">"credits"</span> or <span class="st">"license"</span> for more information. </span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span></code></pre>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="ex">Type</span> <span class="st">"help"</span>, <span class="st">"copyright"</span>, <span class="st">"credits"</span> or <span class="st">"license"</span> for more information.</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span></span></code></pre>
 </div>
 <p>Press <code>CONTROL-D</code> or type <code>exit()</code> to exit the
 Python console.</p>
+</div>
 <div class="section level3">
 <h3 id="venv-and-pip">
 <code>venv</code> and <code>pip</code>
@@ -956,8 +892,8 @@ features.</p>
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/installation-instructions.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/installation-instructions.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-06-19",
-  "datePublished": "2025-06-25"
+  "dateModified": "2025-06-26",
+  "datePublished": "2025-06-26"
 }
 
   </script><script>

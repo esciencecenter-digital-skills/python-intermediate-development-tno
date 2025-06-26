@@ -118,11 +118,11 @@
   Intermediate Research Software Development
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 5%" class="percentage">
-    5%
+<aside class="col-md-12 lesson-progress"><div style="width: 6%" class="percentage">
+    6%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 5%" aria-valuenow="5" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 6%" aria-valuenow="6" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -265,7 +265,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitHub</a>
+        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitLab</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -445,42 +445,6 @@
 <div class="accordion accordion-flush" id="accordionFlush27">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading27">
-        <a href="50-section5-intro.html">Section 5: Managing and Improving Software Over Its Lifetime</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush28">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading28">
-        <a href="51-managing-software.html">5.1 Managing a Collaborative Software Project</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush29">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading29">
-        <a href="52-assessing-software-suitability-improvement.html">5.2 Assessing Software for Suitability and Improvement</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush30">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading30">
-        <a href="53-improvement-through-feedback.html">5.3 Software Improvement Through Feedback</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush31">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading31">
         <a href="60-wrap-up.html">Wrap-up</a>
     </div><!--/div.accordion-header-->
 
@@ -545,7 +509,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>1.2 Virtual Environments For Software Development</h1>
-        <p>Last updated on 2025-06-19 |
+        <p>Last updated on 2025-06-26 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/episodes/12-virtual-environments.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -586,7 +550,7 @@ should use them?</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
-<hr class="half-width"><p>So far we have cloned our software project from GitHub and inspected
+<hr class="half-width"><p>So far we have cloned our software project from GitLab and inspected
 its contents and architecture a bit. We now want to run our code to see
 what it does - let us do that from the command line. For the most part
 of the course we will run our code and interact with Git from the
@@ -786,7 +750,7 @@ packages using <code>pip</code>.</p>
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> python3 <span class="at">--version</span> <span class="co"># on Mac/Linux</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">$</span> python <span class="at">--version</span> <span class="co"># on Windows — Windows installation comes with a python.exe file rather than a python3.exe file </span></span></code></pre>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">$</span> python <span class="at">--version</span> <span class="co"># on Windows — Windows installation comes with a python.exe file rather than a python3.exe file</span></span></code></pre>
 </div>
 <p>If you are using Windows and invoking <code>python</code> command
 causes your Git Bash terminal to hang with no error message or output,
@@ -1123,7 +1087,7 @@ package:</p>
   This command fails for me
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>If your <code>pip</code> installation is older than version 21.3,
 then this command will probably fail for you. This is because these
@@ -1246,7 +1210,7 @@ longer needed from your virtual environment) is update the contents of
 the <code>requirements.txt</code> file accordingly by re-issuing
 <code>pip freeze</code> command and propagate the updated
 <code>requirements.txt</code> file to your collaborators via your code
-sharing platform (e.g. GitHub).</p>
+sharing platform (e.g. GitLab).</p>
 <div id="official-documentation" class="callout testimonial">
 <div class="callout-square">
 <i class="callout-icon" data-feather="heart"></i>
@@ -1382,8 +1346,8 @@ replicate someone else’s virtual environment on your machine from the
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/12-virtual-environments.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/12-virtual-environments.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-06-19",
-  "datePublished": "2025-06-25"
+  "dateModified": "2025-06-26",
+  "datePublished": "2025-06-26"
 }
 
   </script><script>

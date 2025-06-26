@@ -118,11 +118,11 @@
   Intermediate Research Software Development
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 36%" class="percentage">
-    36%
+<aside class="col-md-12 lesson-progress"><div style="width: 42%" class="percentage">
+    42%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 36%" aria-valuenow="36" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 42%" aria-valuenow="42" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -251,7 +251,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitHub</a>
+        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitLab</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -448,42 +448,6 @@
 <div class="accordion accordion-flush" id="accordionFlush27">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading27">
-        <a href="50-section5-intro.html">Section 5: Managing and Improving Software Over Its Lifetime</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush28">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading28">
-        <a href="51-managing-software.html">5.1 Managing a Collaborative Software Project</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush29">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading29">
-        <a href="52-assessing-software-suitability-improvement.html">5.2 Assessing Software for Suitability and Improvement</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush30">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading30">
-        <a href="53-improvement-through-feedback.html">5.3 Software Improvement Through Feedback</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush31">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading31">
         <a href="60-wrap-up.html">Wrap-up</a>
     </div><!--/div.accordion-header-->
 
@@ -548,7 +512,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>2.4 Diagnosing Issues and Improving Robustness</h1>
-        <p>Last updated on 2025-06-19 |
+        <p>Last updated on 2025-06-26 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/episodes/24-diagnosing-issues-improving-robustness.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -609,11 +573,10 @@ This is where using a <strong>debugger</strong> can be useful.</p>
 </section><section><h2 class="section-heading" id="setting-the-scene">Setting the Scene<a class="anchor" aria-label="anchor" href="#setting-the-scene"></a></h2>
 <hr class="half-width"><p>Let us add a new function called <code>patient_normalise()</code> to
 our inflammation example to normalise a given inflammation data array so
-that all entries fall between 0 and 1. (Make sure you create a new
-feature branch for this work off your <code>develop</code> branch.) To
-normalise each patient’s inflammation data we need to divide it by the
-maximum inflammation experienced by that patient. To do so, we can add
-the following code to <code>inflammation/models.py</code>:</p>
+that all entries fall between 0 and 1.</p>
+<p>To normalise each patient’s inflammation data we need to divide it by
+the maximum inflammation experienced by that patient. To do so, we can
+add the following code to <code>inflammation/models.py</code>:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1015,7 +978,7 @@ changes.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Possible Solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1132,7 +1095,7 @@ inappropriate value.</p>
 <span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a>    ])</span>
 <span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a><span class="kw">def</span> test_patient_normalise(test, expected, expect_raises):</span>
 <span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a>    <span class="co">"""Test normalisation works for arrays of one and positive integers."""</span></span>
-<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a>        </span>
+<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a></span>
 <span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a>    <span class="cf">if</span> expect_raises <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
 <span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a>        <span class="cf">with</span> pytest.raises(expect_raises):</span>
 <span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a>            patient_normalise(np.array(test))</span>
@@ -1144,7 +1107,7 @@ inappropriate value.</p>
 isn’t necessary to perform the <code>npt.assert_allclose</code> because
 just the call to <code>patient_normalise()</code> will raise the
 <code>ValueError</code>.</p>
-<p>Be sure to commit your changes so far and push them to GitHub.</p>
+<p>Be sure to commit your changes so far and push them to GitLab.</p>
 <div id="optional-exercise-add-a-precondition-to-check-the-correct-type-and-shape-of-data" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1177,7 +1140,7 @@ your remote repository on GitHub.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>In <code>inflammation/models.py</code>:</p>
 <div class="codewrapper sourceCode" id="cb11">
@@ -1312,7 +1275,7 @@ string.</p>
 </div>
 </div>
 <p>If you do the challenge, again, be sure to commit your changes and
-push them to GitHub.</p>
+push them to GitLab.</p>
 <p>You should not take it too far by trying to code preconditions for
 every conceivable eventuality. You should aim to strike a balance
 between making sure you secure your function against incorrect use, and
@@ -1358,7 +1321,7 @@ trouble which may be difficult to trace).</p>
 <div class="callout-content">
 <p>Rename our local variable <code>max</code> to something else
 (e.g. call it <code>max_data</code>), then rerun your tests and commit
-these latest changes and push them to GitHub using our usual feature
+these latest changes and push them to GitLab using our usual feature
 branch workflow.</p>
 </div>
 </div>
@@ -1366,15 +1329,15 @@ branch workflow.</p>
 <p>It may be hard to remember to run linter tools every now and then.
 Luckily, we can now add this Pylint execution to our continuous
 integration builds as one of the extra tasks. To add Pylint to our CI
-workflow, we can add the following step to our <code>steps</code> in
-<code>.github/workflows/main.yml</code>:</p>
+workflow, we can add the following job to
+<code>.gitlab-ci.yml</code>:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">...</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>    <span class="ex">-</span> name: Check style with Pylint</span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>      <span class="ex">run:</span> <span class="kw">|</span></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>        <span class="ex">python3</span> <span class="at">-m</span> pylint <span class="at">--fail-under</span><span class="op">=</span>0 <span class="at">--reports</span><span class="op">=</span>y inflammation</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="ex">linter:</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="ex">script:</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>    <span class="ex">python3</span> <span class="at">-m</span> pylint <span class="at">--fail-under</span><span class="op">=</span>0 <span class="at">--reports</span><span class="op">=</span>y inflammation</span>
 <span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="ex">...</span></span></code></pre>
 </div>
 <p>Note we need to add <code>--fail-under=0</code> otherwise the builds
@@ -1386,7 +1349,7 @@ the code analysis.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> git add .github/workflows/main.yml</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> git add .gitlab-ci.yml</span>
 <span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add Pylint run to build"</span></span>
 <span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="ex">$</span> git push origin test-suite</span></code></pre>
 </div>
@@ -1427,8 +1390,8 @@ to a more reasonable 120. While we are at it, let us also set our
 <span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a><span class="ex">...</span></span></code></pre>
 </div>
 <p>do not forget to remove the <code>--fail-under</code> argument to
-Pytest in our GitHub Actions configuration file too, since we do not
-need it anymore.</p>
+Pytest in <code>.gitlab-ci.yml</code>file too, since we do not need it
+anymore.</p>
 <p>Now when we run Pylint we will not be penalised for having a
 reasonable line length. For some further hints and tips on how to
 approach using Pylint for a project, see <a href="https://pythonspeed.com/articles/pylint/" class="external-link">this article</a>.</p>
@@ -1545,8 +1508,8 @@ robustness.</li>
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/24-diagnosing-issues-improving-robustness.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/24-diagnosing-issues-improving-robustness.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-06-19",
-  "datePublished": "2025-06-25"
+  "dateModified": "2025-06-26",
+  "datePublished": "2025-06-26"
 }
 
   </script><script>

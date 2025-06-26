@@ -118,11 +118,11 @@
   Intermediate Research Software Development
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 2%" class="percentage">
-    2%
+<aside class="col-md-12 lesson-progress"><div style="width: 3%" class="percentage">
+    3%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 2%" aria-valuenow="2" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 3%" aria-valuenow="3" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -264,7 +264,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitHub</a>
+        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitLab</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -444,42 +444,6 @@
 <div class="accordion accordion-flush" id="accordionFlush27">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading27">
-        <a href="50-section5-intro.html">Section 5: Managing and Improving Software Over Its Lifetime</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush28">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading28">
-        <a href="51-managing-software.html">5.1 Managing a Collaborative Software Project</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush29">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading29">
-        <a href="52-assessing-software-suitability-improvement.html">5.2 Assessing Software for Suitability and Improvement</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush30">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading30">
-        <a href="53-improvement-through-feedback.html">5.3 Software Improvement Through Feedback</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush31">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading31">
         <a href="60-wrap-up.html">Wrap-up</a>
     </div><!--/div.accordion-header-->
 
@@ -544,7 +508,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>1.1 Introduction to Our Software Project</h1>
-        <p>Last updated on 2025-06-19 |
+        <p>Last updated on 2025-06-26 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/episodes/11-software-project.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -577,7 +541,7 @@ when designing software?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul><li>Use Git to obtain a working copy of our software project from
-GitHub.</li>
+GitLab.</li>
 <li>Inspect the structure and architecture of our software project.</li>
 <li>Understand Model-View-Controller (MVC) architecture in software
 design and its use in our project.</li>
@@ -588,8 +552,8 @@ design and its use in our project.</li>
 </div>
 <section><h2 class="section-heading" id="patient-inflammation-study-project">Patient Inflammation Study Project<a class="anchor" aria-label="anchor" href="#patient-inflammation-study-project"></a></h2>
 <hr class="half-width"><p>You have joined a software development team that has been working on
-the <a href="https://github.com/carpentries-incubator/python-intermediate-inflammation" class="external-link">patient
-inflammation study project</a> developed in Python and stored on GitHub.
+the <a href="https://ci.tno.nl/gitlab/scientific-software-engineering-course/2025-07-01/python-intermediate-inflammation" class="external-link">patient
+inflammation study project</a> developed in Python and stored on GitLab.
 The project analyses the data to study the effect of a new treatment for
 arthritis by analysing the inflammation levels in patients who have been
 given this treatment. It reuses the inflammation datasets from the <a href="https://swcarpentry.github.io/python-novice-inflammation/index.html" class="external-link">Software
@@ -626,50 +590,51 @@ working on your own and in collaboration with others to fix and build on
 top of the existing code during the course.</p>
 </section><section><h2 class="section-heading" id="downloading-our-software-project">Downloading Our Software Project<a class="anchor" aria-label="anchor" href="#downloading-our-software-project"></a></h2>
 <hr class="half-width"><p>To start working on the project, you will first create a fork of the
-software project repository from GitHub within your own GitHub account
-and then obtain a local copy of that project (from your GitHub) on your
+software project repository from GitLab within your own GitLab account
+and then obtain a local copy of that project (from your GitLab) on your
 machine.</p>
-<ol style="list-style-type: decimal"><li>Make sure you have a GitHub account and that you have <a href="index.html#secure-access-to-github-using-git-from-command-line">set
-up SSH key pair for authentication with GitHub</a>.</li>
+<ol style="list-style-type: decimal"><li>Make sure you have a GitLab account and that you have <a href="index.html#secure-access-to-github-using-git-from-command-line">set
+up SSH key pair for authentication with GitLab</a>.</li>
 </ol><p><em><strong>Note:</strong> while it is possible to use HTTPS with a
-personal access token for authentication with GitHub, the recommended
+personal access token for authentication with GitLab, the recommended
 and supported authentication method to use for this course is SSH with
 key pairs.</em></p>
-<ol start="2" style="list-style-type: decimal"><li><p>Log into your GitHub account.</p></li>
-<li><p>Go to the <a href="https://github.com/carpentries-incubator/python-intermediate-inflammation" class="external-link">software
-project repository</a> in GitHub.</p></li>
-</ol><figure><img src="../fig/github-fork-repository.png" class="image-with-shadow figure mx-auto d-block" alt="Software project fork repository in GitHub" width="900"></figure><ol start="4" style="list-style-type: decimal"><li>Click the <code>Fork</code> button towards the top right of the
-repository’s GitHub page to <strong>create a fork</strong> of the
-repository under your GitHub account. Remember, you will need to be
-signed into GitHub for the <code>Fork</code> button to work.</li>
+<ol start="2" style="list-style-type: decimal"><li><p>Log into your GitLab account.</p></li>
+<li><p>Go to the <a href="https://ci.tno.nl/gitlab/scientific-software-engineering-course/2025-07-01/python-intermediate-inflammation" class="external-link">software
+project repository</a> in GitLab.</p></li>
+<li><p>Click the <code>Fork</code> button towards the top right of the
+repository’s GitLab page to <strong>create a fork</strong> of the
+repository under the workshop’s GitLab group. Remember, you will need to
+be signed into GitLab for the <code>Fork</code> button to work.</p></li>
 </ol><p><em><strong>Note:</strong> each participant is creating their own
 fork of the project to work on.</em></p>
 <p><em><strong>Note 2:</strong> we are creating a fork of the software
 project repository (instead of copying it from its template) because we
 want to preserve the history of all commits (with template copying you
 only get a snapshot of a repository at a given point in time).</em></p>
-<ol start="5" style="list-style-type: decimal"><li>Make sure to select your personal account and set the name of the
-project to <code>python-intermediate-inflammation</code> (you can call
+<ol start="5" style="list-style-type: decimal"><li><p>Make sure to select the workshop GitLab group as the
+<strong>namespace</strong> and set the project slug of the project to
+<code>python-intermediate-inflammation-{your name}</code> (you can call
 it anything you like, but it may be easier for future group exercises if
-everyone uses the same name). Ensure that you <strong>uncheck</strong>
-the <code>Copy the main branch only</code> option. This guarantees you
-get all the branches from this repository needed for later
-exercises.</li>
-</ol><figure><img src="../fig/github-fork-repository-confirm.png" class="image-with-shadow figure mx-auto d-block" alt="Making a fork of the software project repository in GitHub" width="600"></figure><ol start="6" style="list-style-type: decimal"><li><p>Click the <code>Create fork</code> button and wait for GitHub to
+everyone uses the same format). Ensure that you <strong>uncheck</strong>
+the <code>Only the default branch main</code> option. This guarantees
+you get all the branches from this repository needed for later
+exercises.</p></li>
+<li><p>Click the <code>Fork project</code> button and wait for GitLab to
 create the forked copy of the repository under your account.</p></li>
-<li><p>Locate the forked repository under your own GitHub account.
-GitHub should redirect you there automatically after creating the fork.
+<li><p>Locate the forked repository under the workshop’s GitLab group.
+GitLab should redirect you there automatically after creating the fork.
 If this does not happen, click your user icon in the top right corner
 and select <code>Your Repositories</code> from the drop-down menu, then
 locate your newly created fork.</p></li>
-</ol><figure><img src="../fig/github-forked-repository-own.png" class="image-with-shadow figure mx-auto d-block" alt="View of your own fork of the software repository in GitHub" width="900"></figure><div id="exercise-obtain-the-software-project-locally" class="callout challenge">
+</ol><div id="exercise-obtain-the-software-project-locally" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-obtain-the-software-project-locally" class="callout-inner">
 <h3 class="callout-title">Exercise: Obtain the Software Project Locally</h3>
 <div class="callout-content">
-<p>Using the command line, clone the copied repository from your GitHub
+<p>Using the command line, clone the copied repository from your GitLab
 account into the home directory on your computer using SSH. Which
 command(s) would you use to get a detailed list of contents of the
 directory you have just cloned?</p>
@@ -681,19 +646,19 @@ directory you have just cloned?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li>Find the SSH URL of the software project repository to clone from
-your GitHub account. Make sure you do not clone the original repository
+<ol style="list-style-type: decimal"><li><p>Find the SSH URL of the software project repository to clone from
+your GitLab account. Make sure you do not clone the original repository
 but rather your own fork, as you should be able to push commits to it
 later on. Also make sure you select the <strong>SSH</strong> tab and not
 the <strong>HTTPS</strong> one. For this course, SSH is the preferred
-way of authenticating when sending your changes back to GitHub. If you
+way of authenticating when sending your changes back to GitLab. If you
 have only authenticated through HTTPS in the past, please follow the
 guidance <a href="#downloading-our-software-project">at the top of this
-section</a> to add an SSH key to your GitHub account.</li>
-</ol><figure><img src="../fig/clone-repository.png" class="image-with-shadow figure mx-auto d-block" alt="URL to clone the repository in GitHub" width="800"></figure><ol start="2" style="list-style-type: decimal"><li>Make sure you are located in your home directory in the command line
-with:</li>
+section</a> to add an SSH key to your GitLab account.</p></li>
+<li><p>Make sure you are located in your home directory in the command
+line with:</p></li>
 </ol><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -703,7 +668,7 @@ with:</li>
 </ol><div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git clone git@github.com:<span class="op">&lt;</span>YOUR_GITHUB_USERNAME<span class="op">&gt;</span>/python-intermediate-inflammation.git</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git clone git@gitlab.com:<span class="op">&lt;</span>WORKSHOP_GROUP_NAME<span class="op">&gt;</span>/python-intermediate-inflammation-<span class="op">&lt;</span>YOUR NAME<span class="op">&gt;</span>.git</span></code></pre>
 </div>
 <p>Make sure you are cloning your fork of the software project and not
 the original repository.</p>
@@ -720,7 +685,7 @@ your project folder in the command line with:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git remote set-url origin git@github.com:<span class="op">&lt;</span>YOUR_GITHUB_USERNAME<span class="op">&gt;</span>/python-intermediate-inflammation.git</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git remote set-url origin git@gitlab.com:<span class="op">&lt;</span>WORKSHOP_GROUP_NAME<span class="op">&gt;</span>/python-intermediate-inflammation-<span class="op">&lt;</span>YOUR NAME<span class="op">&gt;</span>.git</span></code></pre>
 </div>
 </div>
 </div>
@@ -806,7 +771,7 @@ lines of <code>data/inflammation-01.csv</code> file?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>To list the entire content of a file from the project root do:
 <code>cat data/inflammation-01.csv</code>.</li>
@@ -1008,8 +973,8 @@ performs basic statistical analysis using Python.</li>
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/11-software-project.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/11-software-project.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-06-19",
-  "datePublished": "2025-06-25"
+  "dateModified": "2025-06-26",
+  "datePublished": "2025-06-26"
 }
 
   </script><script>

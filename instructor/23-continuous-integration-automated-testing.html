@@ -118,11 +118,11 @@
   Intermediate Research Software Development
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 31%" class="percentage">
-    31%
+<aside class="col-md-12 lesson-progress"><div style="width: 37%" class="percentage">
+    37%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 31%" aria-valuenow="31" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 37%" aria-valuenow="37" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -251,7 +251,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitHub</a>
+        <a href="14-collaboration-using-git.html">1.4 Software Development Using Git and GitLab</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -326,8 +326,7 @@
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
 <li><a href="#what-is-continuous-integration">What is Continuous Integration?</a></li>
-<li><a href="#continuous-integration-with-github-actions">Continuous Integration with GitHub Actions</a></li>
-<li><a href="#scaling-up-testing-using-build-matrices">Scaling Up Testing Using Build Matrices</a></li>
+<li><a href="#continuous-integration-with-gitlab-cicd">Continuous Integration with GitLab CI/CD</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -445,42 +444,6 @@
 <div class="accordion accordion-flush" id="accordionFlush27">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading27">
-        <a href="50-section5-intro.html">Section 5: Managing and Improving Software Over Its Lifetime</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush28">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading28">
-        <a href="51-managing-software.html">5.1 Managing a Collaborative Software Project</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush29">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading29">
-        <a href="52-assessing-software-suitability-improvement.html">5.2 Assessing Software for Suitability and Improvement</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush30">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading30">
-        <a href="53-improvement-through-feedback.html">5.3 Software Improvement Through Feedback</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush31">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading31">
         <a href="60-wrap-up.html">Wrap-up</a>
     </div><!--/div.accordion-header-->
 
@@ -545,7 +508,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>2.3 Continuous Integration for Automated Testing</h1>
-        <p>Last updated on 2025-06-19 |
+        <p>Last updated on 2025-06-26 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/episodes/23-continuous-integration-automated-testing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -578,7 +541,7 @@ scales well?</li>
 <h3 class="card-title">Objectives</h3>
 <ul><li>Describe the benefits of using Continuous Integration for further
 automation of testing</li>
-<li>Enable GitHub Actions Continuous Integration for public open source
+<li>Enable GitLab CI/CD Continuous Integration for public open source
 repositories</li>
 <li>Use continuous integration to automatically run unit tests and code
 coverage when changes are committed to a version control repository</li>
@@ -616,19 +579,19 @@ repository, builds it if necessary, and runs any tests. Once complete,
 it presents a report to let you see what happened.</p>
 <p>There are many CI infrastructures and services, free and paid for,
 and subject to change as they evolve their features. We will be looking
-at <a href="https://github.com/features/actions" class="external-link">GitHub Actions</a> -
-which unsurprisingly is available as part of GitHub.</p>
-</section><section><h2 class="section-heading" id="continuous-integration-with-github-actions">Continuous Integration with GitHub Actions<a class="anchor" aria-label="anchor" href="#continuous-integration-with-github-actions"></a></h2>
+at <a href="https://about.gitlab.com/topics/ci-cd/" class="external-link">GitLab CI/CD</a> -
+which unsurprisingly is available as part of GitLab.</p>
+</section><section><h2 class="section-heading" id="continuous-integration-with-gitlab-cicd">Continuous Integration with GitLab CI/CD<a class="anchor" aria-label="anchor" href="#continuous-integration-with-gitlab-cicd"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="a-quick-look-at-yaml">A Quick Look at YAML<a class="anchor" aria-label="anchor" href="#a-quick-look-at-yaml"></a></h3>
-<p>YAML is a text format used by GitHub Action workflow files. It is
-also increasingly used for configuration files and storing other types
-of data, so it is worth taking a bit of time looking into this file
-format.</p>
+<p>YAML is a text format used for the <code>.gitlab-ci.yml</code> file,
+with which you configure GitLab CI/CD. It is also increasingly used for
+configuration files and storing other types of data, so it is worth
+taking a bit of time looking into this file format.</p>
 <p><a href="https://www.commonwl.org/user_guide/yaml/" class="external-link">YAML</a> (a
 recursive acronym which stands for “YAML Ain’t Markup Language”) is a
 language designed to be human readable. A few basic things you need to
-know about YAML to get started with GitHub Actions are key-value pairs,
+know about YAML to get started with GitLab CI/CD are key-value pairs,
 arrays, maps and multi-line strings.</p>
 <p>So firstly, YAML files are essentially made up of
 <strong>key-value</strong> pairs, in the form <code>key: value</code>,
@@ -699,7 +662,7 @@ ascenders:</p>
 </div>
 <p>So here we have a YAML array of our two mountaineers, each with
 additional keys offering more information.</p>
-<p>GitHub Actions also makes use of <code>|</code> symbol to indicate a
+<p>GitLab CI/CD also makes use of <code>|</code> symbol to indicate a
 multi-line string that preserves new lines. For example:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -710,142 +673,52 @@ multi-line string that preserves new lines. For example:</p>
 </div>
 <p>They key <code>shakespeare_couplet</code> would hold the full two
 line string, preserving the new line after sorrow.</p>
-<p>As we will see shortly, GitHub Actions workflows will use all of
-these.</p>
+<p>As we will see shortly, the <code>.gitlab-ci.yml</code> will use all
+of these.</p>
 </div>
 <div class="section level3">
 <h3 id="defining-our-workflow">Defining Our Workflow<a class="anchor" aria-label="anchor" href="#defining-our-workflow"></a></h3>
-<p>With a GitHub repository there is a way we can set up CI to run our
+<p>With a GitLab project there is a way we can set up CI to run our
 tests automatically when we commit changes. Let us do this now by adding
 a new file to our repository whilst on the <code>test-suite</code>
-branch. First, create the new directories
-<code>.github/workflows</code>:</p>
+branch.</p>
+<p>Let us add a new YAML file called <code>.gitlab-ci.yml</code> (note
+its extension is <code>.yml</code> without the <code>a</code>) with this
+content:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> .github/workflows</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">image:</span> python:3.11</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="ex">before_script:</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="ex">-</span> python3 <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    <span class="ex">-</span> python3 <span class="at">-m</span> pip install <span class="at">-r</span> requirements.txt</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="ex">test:</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>  <span class="ex">script:</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>    <span class="co"># Run PyTest with coverage</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>    <span class="ex">-</span> python3 <span class="at">-m</span> pytest <span class="at">--cov</span><span class="op">=</span>inflammation.models tests/test_models.py</span></code></pre>
 </div>
-<p>This directory is used specifically for GitHub Actions, allowing us
-to specify any number of workflows that can be run under a variety of
-conditions, which is also written using YAML. So let us add a new YAML
-file called <code>main.yml</code> (note its extension is
-<code>.yml</code> without the <code>a</code>) within the new
-<code>.github/workflows</code> directory:</p>
-<div class="codewrapper sourceCode" id="cb8">
-<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> CI</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co"># We can specify which Github events will trigger a CI build</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at"> push</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co"># now define a single job 'build' (but could define more)</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">    # we can also specify the OS to run tests on</span></span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a></span>
-<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">    # a job is a seq of steps</span></span>
-<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a></span>
-<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">    # Next we need to checkout out repository, and set up Python</span></span>
-<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="co">    # A 'name' is just an optional label shown in the log - helpful to clarify progress - and can be anything</span></span>
-<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository</span></span>
-<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
-<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a></span>
-<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python 3.11</span></span>
-<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
-<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.11"</span></span>
-<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a></span>
-<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Python dependencies</span></span>
-<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb8-29"><a href="#cb8-29" tabindex="-1"></a>        python3 -m pip install --upgrade pip</span>
-<span id="cb8-30"><a href="#cb8-30" tabindex="-1"></a>        python3 -m pip install -r requirements.txt .</span>
-<span id="cb8-31"><a href="#cb8-31" tabindex="-1"></a></span>
-<span id="cb8-32"><a href="#cb8-32" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Test with PyTest</span></span>
-<span id="cb8-33"><a href="#cb8-33" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb8-34"><a href="#cb8-34" tabindex="-1"></a>        python3 -m pytest --cov=inflammation.models tests/test_models.py</span></code></pre>
-</div>
-<p><em><strong>Note</strong>: be sure to create this file as
-<code>main.yml</code> within the newly created
-<code>.github/workflows</code> directory, or it will not work!</em></p>
-<p>So as well as giving our workflow a name - CI - we indicate with
-<code>on</code> that we want this workflow to run when we
-<code>push</code> commits to our repository. The workflow itself is made
-of a single <code>job</code> named <code>build</code>, and we could
-define any number of jobs after this one if we wanted, and each one
-would run in parallel.</p>
-<p>Next, we define what our build job will do. With <code>runs-on</code>
-we first state which operating systems we want to use, in this case just
-Ubuntu for now. We will be looking at ways we can scale this up to
-testing on more systems later.</p>
-<p>Lastly, we define the <code>step</code>s that our job will undertake
-in turn, to set up the job’s environment and run our tests. You can
-think of the job’s environment initially as a blank slate: much like a
-freshly installed machine (albeit virtual) with very little installed on
-it, we need to prepare it with what it needs to be able to run our
-tests. Each of these steps are:</p>
-<ul><li>
-<strong>Checkout repository for the job:</strong> <code>uses</code>
-indicates that want to use a GitHub Action called <code>checkout</code>
-that does this</li>
-<li>
-<strong>Set up Python version:</strong> here we use the
-<code>setup-python</code> Action, indicating that we want Python version
-3.11. Note we specify the version within quotes, to ensure that this is
-interpreted as a complete string. Otherwise, if we wanted to test
-against for example Python 3.10, by specifying <code>3.10</code> without
-the quotes, it would be interpreted as the number <code>3.1</code> which
-- although it is the same number as <code>3.10</code> - would be
-interpreted as the wrong version!</li>
-<li>
-<strong>Install latest version of pip, dependencies, and our
-inflammation package:</strong> In order to locally install our
-<code>inflammation</code> package it is good practice to upgrade the
-version of pip that is present first, then we use pip to install our
-package dependencies. Notice that it is fine to omit the
-<code>--editable</code> flag in this case because the source code will
-be static and therefore we don’t need this to be an “editable” install
-like when we are developing locally. We use <code>run</code> here to run
-theses commands in the CI shell environment</li>
-<li>
-<strong>Test with PyTest:</strong> lastly, we run
-<code>python3 -m pytest</code>, with the same arguments we used manually
-before</li>
-</ul><div id="what-about-other-actions" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="what-about-other-actions" class="callout-inner">
-<h3 class="callout-title">What about other Actions?</h3>
-<div class="callout-content">
-<p>Our workflow here uses standard GitHub Actions (indicated by
-<code>actions/*</code>). Beyond the standard set of actions, others are
-available via the <a href="https://docs.github.com/en/developers/github-marketplace/github-marketplace-overview" class="external-link">GitHub
-Marketplace</a>. It contains many third-party actions (as well as apps)
-that you can use with GitHub for many tasks across many programming
-languages, particularly for setting up environments for running tests,
-code analysis and other tools, setting up and using infrastructure (for
-things like Docker or Amazon’s AWS cloud), or even managing repository
-issues. You can even contribute your own.</p>
-</div>
-</div>
-</div>
+<p>The <code>image: python:3.11</code> indicates the docker image that
+will be used to run our pipeline. In this case the default python docker
+image with Python version 3.11.</p>
+<p>The <code>before_script</code> ensures the project has all required
+dependencies installed, preparing the environment for testing.</p>
+<p>The <code>test</code> job executes tests and generates a coverage
+report, verifying that the code is functioning correctly with the
+required test coverage.</p>
 </div>
 <div class="section level3">
-<h3 id="triggering-a-build-on-github-actions">Triggering a Build on GitHub Actions<a class="anchor" aria-label="anchor" href="#triggering-a-build-on-github-actions"></a></h3>
+<h3 id="triggering-a-build-on-gitlab-cicd">Triggering a Build on GitLab CI/CD<a class="anchor" aria-label="anchor" href="#triggering-a-build-on-gitlab-cicd"></a></h3>
 <p>Now if we commit and push this change a CI run will be triggered:</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> git add .github</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add GitHub Actions configuration"</span></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="ex">$</span> git push origin test-suite</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git add .gitlab-ci.yml</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add GitLab CI/CD pipeline"</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="ex">$</span> git push origin test-suite</span></code></pre>
 </div>
-<p>Since we are only committing the GitHub Actions configuration file to
+<p>Since we are only committing the GitLab CI/CD configuration file to
 the <code>test-suite</code> branch for the moment, only the contents of
 this branch will be used for CI. We can pass this file upstream into
 other branches (i.e. via merges) when we are happy it works, which will
@@ -858,141 +731,81 @@ scale development team working across potentially many branches.</p>
 </div>
 <div class="section level3">
 <h3 id="checking-build-progress-and-reports">Checking Build Progress and Reports<a class="anchor" aria-label="anchor" href="#checking-build-progress-and-reports"></a></h3>
-<p>Handily, we can see the progress of the build from our repository on
-GitHub by selecting the <code>test-suite</code> branch from the dropdown
-menu (which currently says <code>main</code>), and then selecting
-<code>commits</code> (located just above the code directory listing on
-the right, alongside the last commit message and a small image of a
-timer).</p>
-<figure><img src="../fig/ci-initial-ga-build.png" class="image-with-shadow figure mx-auto d-block" alt="Continuous Integration with GitHub Actions - Initial Build" width="1000"></figure><p>You’ll see a list of commits for this branch, and likely see an
-orange marker next to the latest commit (clicking on it yields
-<code>Some checks haven't completed yet</code>) meaning the build is
-still in progress. This is a useful view, as over time, it will give you
-a history of commits, who did them, and whether the commit resulted in a
-successful build or not.</p>
+<p>Handily, we can see the progress of the build from our project on
+GitLab by <code>Jobs</code> from the <code>Build</code> menu on the left
+sidebar. The <code>Build</code> menu has a small rocket icon next to
+it.</p>
+<p>You will see a list of Jobs and likely see a marker indicating that
+it is still in progress. <img src="../fig/ci-initial-ga-build.png" class="image-with-shadow figure" alt="Continuous Integration with GitLab CI/CD - Initial Build" width="1000"></p>
 <p>Hopefully after a while, the marker will turn into a green tick
 indicating a successful build. Clicking it gives you even more
-information about the build, and selecting <code>Details</code> link
-takes you to a complete log of the build and its output.</p>
-<figure><img src="../fig/ci-initial-ga-build-log.png" class="image-with-shadow figure mx-auto d-block" alt="Continuous Integration with GitHub Actions - Build Log" width="1000"></figure><p>The logs are actually truncated; selecting the arrows next to the
-entries - which are the <code>name</code> labels we specified in the
-<code>main.yml</code> file - will expand them with more detail,
-including the output from the actions performed.</p>
-<figure><img src="../fig/ci-initial-ga-build-details.png" class="image-with-shadow figure mx-auto d-block" alt="Continuous Integration with GitHub Actions - Build Details" width="1000"></figure><p>GitHub Actions offers these continuous integration features as a
-completely free service for public repositories, and supplies 2000 build
-minutes a month on as many private repositories that you like. Paid
-levels are available too.</p>
+information about the build and its output</p>
+<figure><img src="../fig/ci-initial-ga-build-log.png" class="image-with-shadow figure mx-auto d-block" alt="Continuous Integration with GitLab CI/CD - Build Log" width="1000"></figure></div>
+<div class="section level3">
+<h3 id="gitlab-runners">GitLab runners<a class="anchor" aria-label="anchor" href="#gitlab-runners"></a></h3>
+<p>This job ran on something that is called a <code>runner</code>. A
+runner is a small virtual machine that can run GitLab CI/CD pipelines.
+The instructors have set these up for you in the workshop GitLab group.
+You should talk to your system administrator to setup dedicated runners
+for you.</p>
+<figure><img src="../fig/ci-initial-ga-build-details.png" class="image-with-shadow figure mx-auto d-block" alt="Continuous Integration with GitLab CI/CD - Build Details" width="1000"></figure><p>You can also use gitlab.com’s runners for free if you provide your
+credit/debit card details, read more <a href="https://about.gitlab.com/pricing/#why-do-i-need-to-enter-credit-debit-card-details-for-free-compute-minutes" class="external-link">here</a></p>
+<div id="exercise-optional-install-self-managed-gitlab-runner." class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
-</section><section><h2 class="section-heading" id="scaling-up-testing-using-build-matrices">Scaling Up Testing Using Build Matrices<a class="anchor" aria-label="anchor" href="#scaling-up-testing-using-build-matrices"></a></h2>
-<hr class="half-width"><p>Now we have our CI configured and building, we can use a feature
-called <strong>build matrices</strong> which really shows the value of
-using CI to test at scale.</p>
-<p>Suppose the intended users of our software use either Ubuntu, Mac OS,
-or Windows, and have Python versions 3.10 through 3.12 installed, and we
-want to support all of these. Assuming we have a suitable test suite, it
-would take a considerable amount of time to set up testing platforms to
-run our tests across all these platform combinations. Fortunately, CI
-can do the hard work for us very easily.</p>
-<p>Using a build matrix we can specify testing environments and
-parameters (such as operating system, Python version, etc.) and new jobs
-will be created that run our tests for each permutation of these.</p>
-<p>Let us see how this is done using GitHub Actions. To support this, we
-define a <code>strategy</code> as a <code>matrix</code> of operating
-systems and Python versions within <code>build</code>. We then use
-<code>matrix.os</code> and <code>matrix.python-version</code> to
-reference these configuration possibilities instead of using hardcoded
-values - replacing the <code>runs-on</code> and
-<code>python-version</code> parameters to refer to the values from the
-matrix. So, our <code>.github/workflows/main.yml</code> should look like
-the following:</p>
-<div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div id="exercise-optional-install-self-managed-gitlab-runner." class="callout-inner">
+<h3 class="callout-title">Exercise (Optional): Install self-managed GitLab runner.</h3>
+<div class="callout-content">
+<p>Please refer to <a href="https://docs.gitlab.com/runner/install/docker.html" class="external-link">this guide for
+various choices on how to install a local runner</a></p>
+<p>These are the steps that will work for most setups:</p>
+<div class="section level3">
+<h3 id="make-sure-you-have-docker-installed-on-your-machine-">0. Make sure you have docker installed on your machine.<a class="anchor" aria-label="anchor" href="#make-sure-you-have-docker-installed-on-your-machine-"></a></h3>
+<p><a href="https://codingguild.tno.nl/coding-at-tno/programming-environments/?h=docker#docker%20(VPN%20needed)" class="external-link">TNO
+Coding guild Docker guide</a></p>
+</div>
+<div class="section level3">
+<h3 id="install-the-gitlab-runner-through-docker">1. Install the GitLab runner through docker<a class="anchor" aria-label="anchor" href="#install-the-gitlab-runner-through-docker"></a></h3>
+<p><strong>Note</strong>: In MacOS systems, /srv does not exist by
+default. Create <code>$HOME/srv</code> (with
+<code>mkdir $HOME/srv</code>), or another private directory, for setup.
+This requires that you also update the following command. Replace
+<code>/srv</code> with <code>$HOME/srv</code>.</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Same key-value pairs as in "Defining Our Workflow" section</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> CI</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span><span class="at"> push</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">    # Here we add the matrices definition:</span></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="at">    </span><span class="fu">strategy</span><span class="kw">:</span></span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="at">      </span><span class="fu">matrix</span><span class="kw">:</span></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="at">        </span><span class="fu">os</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"ubuntu-latest"</span><span class="kw">,</span><span class="at"> </span><span class="st">"macos-latest"</span><span class="kw">,</span><span class="at"> </span><span class="st">"windows-latest"</span><span class="kw">]</span></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"3.10"</span><span class="kw">,</span><span class="at"> </span><span class="st">"3.11"</span><span class="kw">,</span><span class="at"> </span><span class="st">"3.12"</span><span class="kw">]</span></span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">    # Here we add the reference to the os matrix values</span></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ${{ matrix.os }}</span></span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a></span>
-<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">    # Same key-value pairs as in "Defining Our Workflow" section</span></span>
-<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a></span>
-<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository</span></span>
-<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
-<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a></span>
-<span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python ${{ matrix.python-version }}</span></span>
-<span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
-<span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb10-25"><a href="#cb10-25" tabindex="-1"></a><span class="co">        # Here we add the reference to the python-version matrix values</span></span>
-<span id="cb10-26"><a href="#cb10-26" tabindex="-1"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> ${{ matrix.python-version }}</span></span>
-<span id="cb10-27"><a href="#cb10-27" tabindex="-1"></a><span class="co">    # Same steps as in "Defining Our Workflow" section</span></span>
-<span id="cb10-28"><a href="#cb10-28" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Python dependencies</span></span>
-<span id="cb10-29"><a href="#cb10-29" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb10-30"><a href="#cb10-30" tabindex="-1"></a>        python3 -m pip install --upgrade pip</span>
-<span id="cb10-31"><a href="#cb10-31" tabindex="-1"></a>        python3 -m pip install -r requirements.txt .</span>
-<span id="cb10-32"><a href="#cb10-32" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Test with PyTest</span></span>
-<span id="cb10-33"><a href="#cb10-33" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb10-34"><a href="#cb10-34" tabindex="-1"></a>        python3 -m pytest --cov=inflammation.models tests/test_models.py</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-d</span> <span class="at">--name</span> gitlab-runner <span class="at">--restart</span> always <span class="dt">\</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  <span class="at">-v</span> /srv/gitlab-runner/config:/etc/gitlab-runner <span class="dt">\</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>  <span class="at">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="dt">\</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>  gitlab/gitlab-runner:latest</span></code></pre>
 </div>
-<p>The <code>{{ }}</code> are used as a means to reference configuration
-values from the matrix. This way, every possible permutation of Python
-versions 3.10 through 3.12 with the latest versions of Ubuntu, Mac OS
-and Windows operating systems will be tested, and we can expect 9 build
-jobs in total. We can also use this in the <code>name</code> key of the
-step to accurately reflect what it is doing (e.g. which Python version
-is being setup). This will be reflected in the GitHub Action output,
-making parsing those logs easier.</p>
-<p>Let us commit and push this change and see what happens:</p>
+</div>
+<div class="section level3">
+<h3 id="create-a-shared-runner-via-gitlab-interface">2. Create a shared runner (via GitLab interface)<a class="anchor" aria-label="anchor" href="#create-a-shared-runner-via-gitlab-interface"></a></h3>
+<p><code>Settings -&gt; CI/CD -&gt; Runners -&gt; New runner (Select Run untagged jobs) -&gt; Create runner</code></p>
+<p>You will see a command to register you runner, copy it and paste in
+the following step.</p>
+</div>
+<div class="section level3">
+<h3 id="register-the-runner">3. Register the runner<a class="anchor" aria-label="anchor" href="#register-the-runner"></a></h3>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> gitlab-runner /bin/bash</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">gitlab-runner</span> register <span class="at">--url</span> <span class="op">&lt;&lt;url&gt;&gt;</span> --token <span class="op">&lt;&lt;token&gt;&gt;</span></span></code></pre>
+</div>
+<p>Use <code>docker</code> executer, you can specify
+<code>python:latest</code> when you are asked for a default docker
+image.</p>
+</div>
+<div class="section level3">
+<h3 id="run">4. Run<a class="anchor" aria-label="anchor" href="#run"></a></h3>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> git add .github/workflows/main.yml</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add GA build matrix for os and Python version"</span></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="ex">$</span> git push origin test-suite</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">gitlab-runner</span> run</span></code></pre>
 </div>
-<p>If we go to our GitHub build now, we can see that a new job has been
-created for each permutation.</p>
-<figure><img src="../fig/ci-ga-build-matrix.png" class="image-with-shadow figure mx-auto d-block" alt="Continuous Integration with GitHub Actions - Build Matrix" width="1000"></figure><p>Note all jobs running in parallel (up to the limit allowed by our
-account) which potentially saves us a lot of time waiting for testing
-results. Overall, this approach allows us to massively scale our
-automated testing across platforms we wish to test.</p>
-<div id="failed-ci-builds" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="failed-ci-builds" class="callout-inner">
-<h3 class="callout-title">Failed CI Builds</h3>
-<div class="callout-content">
-<p>A CI build can fail when, e.g. a used Python package no longer
-supports a particular version of Python indicated in a GitHub Actions CI
-build matrix. In this case, the solution is either to upgrade the Python
-version in the build matrix (when possible) or downgrade the package
-version (and not use the latest one like we have been doing in this
-course).</p>
-<p>Also note that, if one job fails in the build for any reason - all
-subsequent jobs will get cancelled because of the default behavior of
-GitHub Actions. From <a href="https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs#handling-failures" class="external-link">GitHub’s
-documentation</a>:</p>
-<p><em>GitHub will cancel all in-progress and queued jobs in the matrix
-if any job in the matrix fails.</em> This behaviour can be controlled by
-changing the value of the <code>fail-fast</code> property:</p>
-<div class="codewrapper sourceCode" id="cb12">
-<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co">...</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co">   strategy:</span></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co">     fail-fast: false</span></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co">     matrix:</span></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">...</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1017,6 +830,7 @@ branch.</li>
 <li>We can run - and get reports from - different CI infrastructure
 builds simultaneously.</li>
 </ul></div>
+</div>
 </div>
 </div>
 </section></div> <!-- / div.lesson-content -->
@@ -1077,8 +891,8 @@ builds simultaneously.</li>
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/23-continuous-integration-automated-testing.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/23-continuous-integration-automated-testing.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-06-19",
-  "datePublished": "2025-06-25"
+  "dateModified": "2025-06-26",
+  "datePublished": "2025-06-26"
 }
 
   </script><script>
