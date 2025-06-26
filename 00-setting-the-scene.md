@@ -58,7 +58,7 @@ are transferable to other similar tools and programming languages.
 
 The course is organised into the following sections:
 
-![Course overview diagram](fig/course-overview.svg){alt="Course overview diagram. Arrows connect the following boxed text in order: 1) Setting up software environment 2) Verifying software correctness 3) Software development as a process 4) Collaborative development for reuse 5) Managing software over its lifetime."}
+![Course overview diagram](fig/course-overview.svg){alt="Course overview diagram. Arrows connect the following boxed text in order: 1) Setting up software environment 2) Verifying software correctness 3) Software development as a process 4) Collaborative development for reuse"}
 
 <!---
 Source of the above image can be rendered in the Mermaid live editor:
@@ -68,10 +68,14 @@ The mermaid source is (with one less dash in arrows than needed):
 
 ```mermaid
 flowchart LR
-  A(1. Setting up software environment) -> B(2. Verifying software correctness)
-  B -> C(3. Software development as a process)
-  C -> D(4. Collaborative development for reuse)
-  D -> E(5. Managing software over its lifetime)
+A[1. Setting up
+software environment]
+-> B[2. Verifying
+software correctness]
+-> C[3. Software development
+as a process]
+-> D[4. Collaborative
+development for reuse]
 ```
 -->
 
@@ -85,7 +89,7 @@ software development in a typical collaborative code development cycle:
 - **Command line** for running code and interacting with the **command line tool Git** for
 - **Integrated Development Environment** for **code development, testing and debugging**,
   **Version control** and using code branches to develop new features in parallel,
-- **GitHub** (central and remote source code management platform supporting version control with Git)
+- **GitLab** (central and remote source code management platform supporting version control with Git)
   for **code backup, sharing and collaborative development**, and
 - **Python code style guidelines** to make sure our code is
   **documented, readable and consistently formatted**.
@@ -97,7 +101,7 @@ in this section we learn:
 
 - how to set up a **test framework** and write tests to verify the behaviour of our code is correct, and
 - how to automate and scale testing with **Continuous Integration (CI)** using
-  **GitHub Actions** (a CI service available on GitHub).
+  **[GitLab CI/CD](https://about.gitlab.com/topics/ci-cd/)** (a CI service available on GitLab).
 
 ### [Section 3: Software Development as a Process](30-section3-intro.md)
 
@@ -127,19 +131,6 @@ on a group project (as you would do when collaborating on a software project in 
   **tracking issues**,
   **supporting** your software,
   and **packaging software** for release to others.
-
-### [Section 5: Managing and Improving Software Over Its Lifetime](50-section5-intro.md)
-
-Finally, we move beyond just software development to managing a collaborative software project and will look into:
-
-- internal **planning and prioritising tasks** for future development
-  using agile techniques and effort estimation,
-  management of **internal and external communication**,
-  and **software improvement** through feedback.
-- how to adopt a critical mindset not just towards our own software project
-  but also to **assess other people's software to ensure it is suitable** for us to reuse,
-  identify areas for improvement,
-  and how to use GitHub to register good quality issues with a particular code repository.
 
 ## Before We Start
 
@@ -193,7 +184,7 @@ All exercises contain solutions but, wherever possible, try and work out a solut
 ## Outdated Screenshots
 
 Throughout this lesson we will make use and show content
-from Graphical User Interface (GUI) tools (PyCharm and GitHub).
+from Graphical User Interface (GUI) tools (PyCharm and GitLab).
 These are evolving tools and platforms, always adding new features and new visual elements.
 Screenshots in the lesson may then become out-of-sync,
 refer to or show content that no longer exists or is different to what you see on your machine.

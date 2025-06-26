@@ -33,7 +33,7 @@ as well as increasing knowledge about the codebase across the team.
 We will thus look at the benefits of reviewing code,
 in particular, the value of this type of activity within a team,
 and how this can fit within various ways of team working.
-We will see how GitHub can support code review activities via pull requests,
+We will see how GitLab can support code review activities via merge requests,
 and how we can do these ourselves making use of best practices.
 
 After that, we will look at some general principles of software maintainability
@@ -45,35 +45,6 @@ We will also look at how we can package software for release and distribution,
 using **Poetry** to manage our Python dependencies
 and produce a code package we can use with a Python package indexing service
 to illustrate these principles.
-
-![](fig/section4-overview.svg){alt='Software design and architecture' .image-with-shadow width="1000px" }
-
-<!--
-Source of the above image can be rendered in the Mermaid live editor:
-
-https://mermaid.live/edit#pako:eNpVkE9rwzAMxb-K8CmFNrB_lxwGW9vbellhh-GLlsitIZGCrKSU0u8-t2vYpouF9HsP-Z1cLQ25yoVWDvUe1eDt3fNLcVfClswi72DoPScJdkAlIB6jCnfENvO8WDzDa3FfwgdpDMdM_0FrUaXamFK6ocviIdtO-4ZGaqW_WHnGBAi9Sv1Lr4rHEpbStvglihZH8vxHA0EUlIaUx54h1wL-vzefdfFUwgYZd5ffTOd5lpEUoiVoYyCLHc3c3HWkHcYmJ3K6mHhne-rIuyq3DQUcWvPO8zmjOJhsj1y7ynSguRv6Bo1WEXeKnasCtilPqYkmuvlJ-Rr2RK6vm0ndI3-KTLrzNzfGi8o
-
-The mermaid source (with one less dash in arrows than needed):
-
-flowchart LR
-A(1. Setting up
-software environment)
--> B(2. Verifying
-software correctness)
--> C(3. Software development
-as a process)
--> D(4. Collaborative
-development for reuse
-
-    - Code review
-    - Software documentation
-    - Software packaging & release
-    )
--> E(5. Managing software
-over its lifetime)
-
--->
-
 
 
 <!--
