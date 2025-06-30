@@ -233,7 +233,7 @@ def first(lst: list[int]) -> int:
     ...
 ```
 
-But often we like to be more generic than that: hence generic types.
+But often we like to be more generic than that: hence generic types, here using the syntax [introduced in Python 3.12](https://docs.python.org/3/whatsnew/3.12.html#pep-695-type-parameter-syntax).
 
 ```python
 def first[T](lst: list[T]) -> T:
@@ -241,6 +241,17 @@ def first[T](lst: list[T]) -> T:
 
 first(["a", "b", "c"])
 ```
+
+::: challenge
+The `Any` annotation can also be regarded as a 'generic' type.
+Why would that not be the right choice here?
+
+:::: solution
+Using the `Any` type would be fine for only annotating the input type. But if the output type is
+also `Any`, then there is no link between the type that was passed in and the returned type.
+::::
+:::
+
 
 ::: challenge
 Try running `first([])`, does the type checker complain? Write a version of `first` that returns `None` on an empty list. What should the type signature be?
