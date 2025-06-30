@@ -131,7 +131,7 @@ Which command(s) would you use to get a detailed list of contents of the directo
 3. From your home directory in the command line, do:
 
   ```bash
-  $ git clone git@gitlab.com:<WORKSHOP_GROUP_NAME>/python-intermediate-inflammation-<YOUR NAME>.git
+  $ git clone git@ci.tno.nl:<WORKSHOP_GROUP_NAME>/python-intermediate-inflammation-<YOUR NAME>.git
   ```
 
   Make sure you are cloning your fork of the software project and not the original repository.
@@ -146,7 +146,7 @@ Which command(s) would you use to get a detailed list of contents of the directo
   you can easily fix that from your project folder in the command line with:
 
   ```bash
-  $ git remote set-url origin git@gitlab.com:<WORKSHOP_GROUP_NAME>/python-intermediate-inflammation-<YOUR NAME>.git
+  $ git remote set-url origin git@ci.tno.nl:<WORKSHOP_GROUP_NAME>/python-intermediate-inflammation-<YOUR NAME>.git
   ```
 
 :::::::::::::::::::::::::
