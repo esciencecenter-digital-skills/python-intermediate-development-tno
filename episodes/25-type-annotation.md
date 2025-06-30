@@ -30,6 +30,29 @@ exercises: 45
 - Have documentation that is always correct.
 - Better autocompletion.
 
+## First examples
+We can add type information on variables:
+
+```python
+a: int = 3
+words: list[string] = ["hello", "tno"]
+constants: dict[string, float] = { "pi": 3.14, "e": 2.72 }
+```
+
+These annotations do not affect the flow of your program. In fact, they are completely ignored by the Python interpreter. It is more common to find type annotations in a function header:
+
+```python
+def abc_formula(a: float, b: float, c: float) -> complex:
+    """Computes solutions to the equation
+
+    $$a x^2 + b x + c = 0.$$
+    """
+    d = (b**2 - 4 * a * c)**0.5
+    return (-b - d) / (2 * a), (-b + d) / (2 * a)
+```
+
+We can use an external type checker to check that our type annotations are consistent with the implementation of our program.
+
 ## Tools
 
 There are many type checkers available:
