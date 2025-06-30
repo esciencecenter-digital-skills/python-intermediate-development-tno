@@ -1,5 +1,5 @@
 ---
-title: 2.5 Optional Exercises for Section 2
+title: 2.6 Optional Exercises for Section 2
 start: no
 teaching: 0
 exercises: 45
