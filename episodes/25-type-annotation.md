@@ -57,13 +57,13 @@ We can use an external type checker to check that our type annotations are consi
 
 There are many type checkers available:
 
-MyPy
-: The OG, developed by none other than Guido van Rossum himself.
+[MyPy](https://mypy.readthedocs.io/en/stable/)
+: The first, developed by none other than Guido van Rossum himself.
 
-PyRight
+[PyRight](https://microsoft.github.io/pyright/#/)
 : Often more feature rich than MyPy, developed by Microsoft as part of the Python language server.
 
-Ty
+[Ty](https://github.com/astral-sh/ty/tree/main/docs)
 : By Astral. Not yet feature complete, however Astral brought us `ruff` and `uv`, both stellar tools. So this could become the type checker of the future.
 
 ::: info
@@ -183,7 +183,7 @@ In general, try to follow these rules:
 
 - **Be as inclusive as possible with typing input arguments.** Specify what you expect and not more. Do you expect an iterable, but don't care if it is a list, generator or something other exotic? Use `Iterable`. Are you indexing into the collection, use `Sequence`. Do you want something *like* a dictionary, use `Mapping`, etc.
 
-- **Be as narrow as reasonable with specifying output types.** Concrete type information tells the user more about what they can expect. If your output is a `list[int]`, there is no need value in specifying `Sequence[Real]` (see `numbers` module for abstract number types).
+- **Be as narrow as reasonable with specifying output types.** Concrete type information tells the user more about what they can expect. If your output is a `list[int]`, there is no need value in specifying `Sequence[Real]` (see Python's [`numbers`](https://docs.python.org/3/library/numbers.html) module for abstract number types).
 :::
 
 ## Data classes
