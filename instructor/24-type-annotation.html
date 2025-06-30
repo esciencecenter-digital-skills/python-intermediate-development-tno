@@ -613,9 +613,17 @@ By Astral. Not yet feature complete, however Astral brought us
 <code>ruff</code> and <code>uv</code>, both stellar tools. So this could
 become the type checker of the future.
 </dd>
-</dl><div class="info">
+</dl><div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
 <p>Tip: try several of these on some of the examples below. Which type
 checker has the nicest error messages? Did it find all of the bugs?</p>
+</div>
+</div>
 </div>
 <div id="exercise-type-errors" class="callout challenge">
 <div class="callout-square">
@@ -791,8 +799,13 @@ sometimes we want to express that <code>Any</code> object will do:</p>
 <span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>    <span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(items):</span>
 <span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>        <span class="bu">print</span>(i, v)</span></code></pre>
 </div>
-<div class="section level3 info">
-<h3 id="best-practice">Best practice<a class="anchor" aria-label="anchor" href="#best-practice"></a></h3>
+<div id="best-practice" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="best-practice" class="callout-inner">
+<h3 class="callout-title">Best practice</h3>
+<div class="callout-content">
 <p>In general, try to follow these rules:</p>
 <ul><li><p><strong>Be as inclusive as possible with typing input
 arguments.</strong> Specify what you expect and not more. Do you expect
@@ -806,13 +819,22 @@ they can expect. If your output is a <code>list[int]</code>, there is no
 need value in specifying <code>Sequence[Real]</code> (see Python’s <a href="https://docs.python.org/3/library/numbers.html" class="external-link"><code>numbers</code></a>
 module for abstract number types).</p></li>
 </ul></div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="data-classes">Data classes<a class="anchor" aria-label="anchor" href="#data-classes"></a></h2>
-<hr class="half-width"><div class="section level3 info">
-<h3 id="data-before-classes">Data before classes<a class="anchor" aria-label="anchor" href="#data-before-classes"></a></h3>
+<hr class="half-width"><div id="data-before-classes" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="data-before-classes" class="callout-inner">
+<h3 class="callout-title">Data before classes</h3>
+<div class="callout-content">
 <p>In many languages structures or records are considered more primitive
 than classes, not so in Python. We will learn more about classes and
 their place in software design in part 3. In this section we’ll only
 consider data classes as a means of grouping data.</p>
+</div>
+</div>
 </div>
 <p>Type annotations go really well together with data classes, a means
 of combining elements into a larger data structure.</p>
