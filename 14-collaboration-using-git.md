@@ -284,7 +284,7 @@ and can fix this from the command line by
 changing the remote repository's HTTPS URL to its SSH equivalent:
 
 ```bash
-$ git remote set-url origin git@gitlab.com:<WORKSHOP_GROUP_NAME>/python-intermediate-inflammation-<YOUR NAME>.git
+$ git remote set-url origin git@ci.tno.nl:<WORKSHOP_GROUP_NAME>/python-intermediate-inflammation-<YOUR NAME>.git
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
