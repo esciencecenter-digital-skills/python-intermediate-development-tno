@@ -77,7 +77,7 @@ Can you spot the mistake in the following code?
 
 ```python
 def logistic_map(r, x):
-  return r * x * (1 - x)
+    return r * x * (1 - x)
 
 logistic_map("hello", 2.4)
 ```
@@ -94,14 +94,14 @@ How about the following code?
 def binary_search(lst, value):
     low = 0
     high = len(lst)-1
-    while low <= high: 
+    while low <= high:
         mid = (low+high) / 2
         if lst[mid] > value:
-          high = mid-1
+            high = mid-1
         elif lst[mid] < value:
-          low = mid+1
+            low = mid+1
         else:
-          return mid
+            return mid
     return -1
 
 binary_search([3.4, 7.8, 9.1], 5.2)
@@ -117,24 +117,24 @@ Add type annotation to these codes:
 
 ```python
 def logistic_map(r: float, x: float) -> float:
-  return r * x * (1 - x)
+    return r * x * (1 - x)
 ```
 
 Do we get nicer messages now? How about our binary search? We're not restricted to typing function arguments (although that's the most common use). By explicitly typing intermediate values, we may catch errors early.
 
 ```python
 def binary_search(lst: list, value) -> int:
-  low: int = 0
-  high: int = len(lst)-1
-  while low <= high: 
-    mid: int = (low+high) / 2
-    if lst[mid] > value:
-      high = mid-1
-    elif lst[mid] < value:
-      low = mid+1
-    else:
-      return mid
-  return -1
+    low: int = 0
+    high: int = len(lst)-1
+    while low <= high:
+        mid: int = (low+high) / 2
+        if lst[mid] > value:
+            high = mid-1
+        elif lst[mid] < value:
+            low = mid+1
+        else:
+            return mid
+    return -1
 ```
 
 Is the problem now identified with `mypy`? Note that we haven't typed `value` yet: we'll get to that later.
@@ -152,17 +152,17 @@ Sometimes we don't know the exact type of a value, or we'd like to specify that 
 
 ```python
 def binary_search(lst: list, value) -> int | None:
-  low: int = 0
-  high: int = len(lst)-1
-  while low <= high: 
-    mid: int = (low+high) // 2
-    if lst[mid] > value:
-      high = mid-1
-    elif lst[mid] < value:
-      low = mid+1
-    else:
-      return mid
-  return None
+    low: int = 0
+    high: int = len(lst)-1
+    while low <= high:
+        mid: int = (low+high) // 2
+        if lst[mid] > value:
+            high = mid-1
+        elif lst[mid] < value:
+            low = mid+1
+        else:
+            return mid
+    return None
 ```
 
 We don't always care about the precise type of an object. For instance, if we just want to write a for loop over an iterable, and sometimes we want to express that `Any` object will do:
@@ -230,14 +230,14 @@ How would we type a function that returns the first element in a list? Suppose t
 
 ```python
 def first(lst: list[int]) -> int:
-  ...
+    ...
 ```
 
-But we like to be more generic than that: hence generic types.
+But often we like to be more generic than that: hence generic types.
 
 ```python
 def first[T](lst: list[T]) -> T:
-  return lst[0]
+    return lst[0]
 
 first(["a", "b", "c"])
 ```
@@ -250,9 +250,9 @@ Use `Optional[T]` or `T | None`.
 
 ```python
 def first[T](lst: list[T]) -> T | None:
-  if not lst:
-    return None
-  return lst[0]
+    if not lst:
+        return None
+    return lst[0]
 ```
 ::::
 :::
@@ -264,7 +264,7 @@ We still haven't typed our `binary_search` algorithm completely. We'd like to ex
 
 ```python
 def binary_search[T](lst: list[T], value: T) -> int | None:
-  ...
+    ...
 ```
 
 This reads as: `binary_search` introduces an unknown type `T`, such that we expect `list[T]` and `T` to be the types of the arguments to this function.
@@ -283,25 +283,25 @@ There is no built-in type constraint for ordered types, we'll have to define our
 from typing import Protocol, Self
 
 class Ord(Protocol):
-  def __lt__(self: Self, other: Self) -> bool:
-    ...
+    def __lt__(self: Self, other: Self) -> bool:
+        ...
 ```
 
 The full type definition of `binary_search`:
 
 ```python
 def binary_search[T: Ord](lst: list[T], value: T) -> int | None:
-  low: int = 0
-  high: int = len(lst)-1
-  while low <= high:
-    mid: int = (low+high) // 2
-    if lst[mid] > value:
-      high = mid-1
-    elif lst[mid] < value:
-      low = mid+1
-    else:
-      return mid
-  return -1
+    low: int = 0
+    high: int = len(lst)-1
+    while low <= high:
+        mid: int = (low+high) // 2
+        if lst[mid] > value:
+            high = mid-1
+        elif lst[mid] < value:
+            low = mid+1
+        else:
+            return mid
+    return -1
 ```
 
 ::: challenge
