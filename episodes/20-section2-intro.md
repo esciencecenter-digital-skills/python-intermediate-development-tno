@@ -67,6 +67,9 @@ In this section we will:
   a **Continuous Integration** infrastructure that allows us to
   automate tasks when things happen to our code,
   such as running those tests when a new commit is made to a code repository.
+- Add **type annotations** to indicate the intended use of our code, which lets
+  our editor provide more helpful autocompletion and lets a **type checker**
+  help us find bugs,
 - Use PyCharm's integrated **debugger** to
   help us locate a fault in our code while it is running, and then fix it.
 
