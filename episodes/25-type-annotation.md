@@ -66,7 +66,7 @@ PyRight
 Ty
 : By Astral. Not yet feature complete, however Astral brought us `ruff` and `uv`, both stellar tools. So this could become the type checker of the future.
 
-::: info
+::: callout
 Tip: try several of these on some of the examples below. Which type checker has the nicest error messages? Did it find all of the bugs?
 :::
 
@@ -176,7 +176,7 @@ def print_numbered_list(items: Iterable[Any]):
         print(i, v)
 ```
 
-::: info
+::: callout
 ### Best practice
 
 In general, try to follow these rules:
@@ -188,7 +188,7 @@ In general, try to follow these rules:
 
 ## Data classes
 
-::: info
+::: callout
 ### Data before classes
 In many languages structures or records are considered more primitive than classes, not so in Python. We will learn more about classes and their place in software design in part 3. In this section we'll only consider data classes as a means of grouping data.
 :::
