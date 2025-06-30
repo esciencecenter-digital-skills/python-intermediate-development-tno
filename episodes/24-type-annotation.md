@@ -1,5 +1,5 @@
 ---
-title: 2.5 Type annotations
+title: 2.4 Type annotations
 teaching: 15
 exercises: 45
 ---

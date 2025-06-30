@@ -81,8 +81,8 @@ episodes:
 - 21-automatically-testing-software.md
 - 22-scaling-up-unit-testing.md
 - 23-continuous-integration-automated-testing.md
-- 24-diagnosing-issues-improving-robustness.md
-- 25-type-annotation.md
+- 24-type-annotation.md
+- 25-diagnosing-issues-improving-robustness.md
 - 26-section2-optional-exercises.md
 - 30-section3-intro.md
 - 31-software-requirements.md
