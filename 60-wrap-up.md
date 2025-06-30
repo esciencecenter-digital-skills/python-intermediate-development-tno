@@ -142,7 +142,7 @@ Below are some additional resources to help you continue learning:
 - [Additional episode on programming paradigms](../learners/programming-paradigms.md)
 - [CodeRefinery lessons][coderefinery-lessons] on writing software for open and reproducible research
 - [Python documentation][python-documentation]
-- [GitHub Actions documentation][github-actions]
+- [GitLab CI/CD documentation](https://docs.gitlab.com/topics/build_your_application/)
 
 
 

@@ -638,7 +638,7 @@ The [`pytest.raises()`](https://docs.pytest.org/en/stable/reference/reference.ht
 See if you can use that to more precisely test the exceptions raised by your function.
 
 Once you are done, commit your new files,
-and push the new commits to your remote repository on GitHub.
+and push the new commits to your remote repository on GitLab.
 
 
 :::::::::::::::  solution
