@@ -215,8 +215,10 @@ To check that everything works, run:
 $ ssh -T git@ci.tno.nl
 ```
 returning (something similar to):
-```
+
+```bash
 Welcome to GitLab @[username]!
+```
 
 ## Python 3 Distribution
 
