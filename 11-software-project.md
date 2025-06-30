@@ -64,7 +64,7 @@ from GitLab within your own GitLab account
 and then obtain a local copy of that project (from your GitLab) on your machine.
 
 1. Make sure you have a GitLab account
-  and that you have [set up SSH key pair for authentication with GitLab](../learners/setup.md#secure-access-to-github-using-git-from-command-line).
+  and that you have [set up SSH key pair for authentication with GitLab](../learners/setup.md#secure-access-to-gitlab-using-git-from-command-line).
 
   ***Note:** while it is possible to use HTTPS with a personal access token for authentication
   with GitLab, the recommended and supported authentication method to use for this course
