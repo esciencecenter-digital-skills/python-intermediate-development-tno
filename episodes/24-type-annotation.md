@@ -313,7 +313,7 @@ def binary_search[T: Ord](lst: list[T], value: T) -> int | None:
             low = mid+1
         else:
             return mid
-    return -1
+    return None
 ```
 
 ::: challenge
