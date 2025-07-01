@@ -522,7 +522,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>2.4 Type annotations</h1>
-        <p>Last updated on 2025-06-30 |
+        <p>Last updated on 2025-07-01 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/episodes/24-type-annotation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -649,7 +649,7 @@ good message?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The error says we can’t multiply sequences with a non-int of type
 float and points to the sub-expression <code>r * x</code>. However, the
@@ -687,8 +687,8 @@ argument in the first place.</p>
 <span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a></span>
 <span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>binary_search([<span class="fl">3.4</span>, <span class="fl">7.8</span>, <span class="fl">9.1</span>], <span class="fl">5.2</span>)</span></code></pre>
 </div>
-<p>Run a type-checker on the binary search example. What does it
-say?</p>
+<p>Run the code, does it run correctly? Run a type-checker on the binary
+search example. What does it say?</p>
 </div>
 </div>
 </div>
@@ -697,11 +697,12 @@ say?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>We can’t index <code>lst</code> with a floating point value. The
 mistake is at the division by 2, we should have used the <code>//</code>
-operator.</p>
+operator. The type checker is fine with this, because we haven’t
+annotated any types yet.</p>
 </div>
 </div>
 </div>
@@ -752,7 +753,7 @@ haven’t typed <code>value</code> yet: we’ll get to that later.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>In the <code>logistic_map</code> example we find that type hinting
 the arguments helps us identify that the caller made a mistake. Only by
@@ -874,7 +875,7 @@ with and without type annotation?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>When you use type-annotation, you’ll have better auto-completion.</p>
 </div>
@@ -918,7 +919,7 @@ type. Why would that not be the right choice here?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>Using the <code>Any</code> type would be fine for only annotating the
 input type. But if the output type is also <code>Any</code>, then there
@@ -946,7 +947,7 @@ an empty list. What should the type signature be?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>Use <code>Optional[T]</code> or <code>T | None</code>.</p>
 <div class="codewrapper sourceCode" id="cb13">
@@ -992,7 +993,7 @@ definition. What does <code>mypy</code> say?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>We haven’t taught the type checker that our type should be able to
 handle comparison operations. When a type defines comparison like that,
@@ -1027,7 +1028,7 @@ define our own.</p>
 <span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>            low <span class="op">=</span> mid<span class="op">+</span><span class="dv">1</span></span>
 <span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>        <span class="cf">else</span>:</span>
 <span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>            <span class="cf">return</span> mid</span>
-<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span></code></pre>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span></span></code></pre>
 </div>
 <div id="challenge8" class="callout challenge">
 <div class="callout-square">
@@ -1047,7 +1048,7 @@ the type system?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <p>It is surprisingly hard to find a type in Python that doesn’t support
 the <code>&lt;</code> operator. Sometimes this operator doesn’t quite
@@ -1153,7 +1154,7 @@ writing correct code here.</p>
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/24-type-annotation.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/24-type-annotation.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-06-30",
+  "dateModified": "2025-07-01",
   "datePublished": "2025-07-01"
 }
 
