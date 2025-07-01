@@ -107,10 +107,11 @@ def binary_search(lst, value):
 binary_search([3.4, 7.8, 9.1], 5.2)
 ```
 
+Run the code, does it run correctly?
 Run a type-checker on the binary search example. What does it say?
 
 :::: solution
-We can't index `lst` with a floating point value. The mistake is at the division by 2, we should have used the `//` operator.
+We can't index `lst` with a floating point value. The mistake is at the division by 2, we should have used the `//` operator. The type checker is fine with this, because we haven't annotated any types yet.
 ::::
 
 Add type annotation to these codes:
