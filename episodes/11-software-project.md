@@ -87,7 +87,7 @@ and then obtain a local copy of that project (from your GitLab) on your machine.
   you only get a snapshot of a repository at a given point in time).*
 
 5. Make sure to select the workshop GitLab group as the **namespace**
-  and set the project slug of the project to `python-intermediate-inflammation-{your name}`
+  and set the project name of the project to `python-intermediate-inflammation-{your name}`
   (you can call it anything you like,
   but it may be easier for future group exercises if everyone uses the same format).
   Ensure that you **uncheck** the `Only the default branch main` option.
